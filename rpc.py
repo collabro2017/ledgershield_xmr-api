@@ -54,16 +54,15 @@ class MoneroRPC:
             return data
         return None
 
-    def transfer(self, destination, payment_id=None):
+    def transfer(self, destinations, payment_id=None):
         payment_obj = {
-            'destination': destination,
+            'destinations': destinations,
             'mixin': 4,
             'get_tx_key': True
         }
-
         if payment_id:
             payment_obj.update({'payment_id': payment_id})
+        # return True, {'tx_hash': 'this is transaction hash'}
 
         ok, data = self.call('transfer', payment_obj)
-
         return ok, data
