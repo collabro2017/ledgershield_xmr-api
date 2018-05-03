@@ -4,3 +4,9 @@ RPC_CONFIG = {
     'USER': 'admin',
     'PASS': 'admin123'
 }
+
+REDIS_CONFIG = {
+    'HOST': "localhost",
+    'PORT': 6379,
+    'DB': 5
+}
